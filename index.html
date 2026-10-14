@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Monthly Santali Literary Pdf eMagazine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Noto+Sans+Ol+Chiki&display=swap" rel="stylesheet">
+<script src="page-flip.browser.js"></script>
+<style>
+:root{--bg:#f3ead9;--ink:#2b1d12;--muted:#7a6650;--wood:#8a5a34;--wood-d:#5e3a1e;--card:#fffaf0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1511;--ink:#f1e5d0;--muted:#b39b7d;--card:#2a2019}}
+:root[data-theme="dark"]{--bg:#1c1511;--ink:#f1e5d0;--muted:#b39b7d;--card:#2a2019}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,serif;min-height:100vh}
+header{text-align:center;padding:40px 16px 10px}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,5vw,48px);margin:0 0 6px}
+.ol{font-family:'Noto Sans Ol Chiki','Nirmala UI',sans-serif;color:var(--muted);font-size:20px}
+p.sub{color:var(--muted);margin:8px auto 18px;max-width:560px}
+.tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 16px 20px}
+input[type=search]{padding:10px 16px;border-radius:999px;border:1px solid var(--muted);background:var(--card);color:var(--ink);width:min(320px,100%);font-size:15px}
+main{max-width:1100px;margin:0 auto;padding:0 16px 60px}
+.shelf{display:flex;align-items:flex-end;gap:14px;padding:0 20px;min-height:200px;justify-content:center;margin-top:26px;border-bottom:16px solid var(--wood);box-shadow:0 14px 0 -2px var(--wood-d),0 22px 24px -12px rgba(0,0,0,.45);background:linear-gradient(to bottom,rgba(0,0,0,.07),transparent 40%);border-radius:4px 4px 0 0;overflow-x:auto;overflow-y:hidden}
+.book{flex:0 0 auto;position:relative;border:0;cursor:pointer;color:#fff;border-radius:3px 3px 1px 1px;box-shadow:inset 3px 0 5px rgba(255,255,255,.18),inset -3px 0 6px rgba(0,0,0,.28),2px 0 3px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;padding:10px 0;transform-origin:bottom center;transition:transform .25s,margin .25s}
+.book::before,.book::after{content:"";position:absolute;left:0;right:0;height:5px;background:rgba(255,255,255,.35)}
+.book::before{top:10px}.book::after{bottom:10px}
+.book{width:60px;height:270px;padding:24px 0;justify-content:center;align-items:center}
+.book span.sv{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Noto Sans Ol Chiki','Playfair Display',Georgia,serif;text-align:center;line-height:1.35;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.45)}
+.book .t1{font-size:17px;font-weight:700}
+.book .t2{font-family:Georgia,serif;font-size:12px;opacity:.9;letter-spacing:.04em}
+.book:hover,.book:focus-visible{transform:translateY(-12px);outline:none}
+.hint{text-align:center;color:var(--muted);font-size:14px;margin-top:34px}
+.empty{text-align:center;color:var(--muted);padding:40px}
+.reader{position:fixed;inset:0;z-index:50;background:#2a1d12;display:none;flex-direction:column;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+.reader.on{display:flex}
+.rbar,.cbar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--wood-d);color:#fff;flex-wrap:wrap}
+.cbar{justify-content:center}
+.rbar .sw{width:12px;height:30px;border-radius:2px;flex:0 0 auto}
+.rbar b{font-family:'Noto Sans Ol Chiki','Playfair Display',Georgia,serif;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rbar button,.cbar button{background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer;white-space:nowrap}
+.cbar input[type=number]{width:70px;padding:7px;border-radius:8px;border:0;font-size:14px;text-align:center}
+.cbar input[type=range]{flex:1;min-width:120px;max-width:340px}
+.stage{flex:1;min-height:0;position:relative;overflow:hidden}
+#book{width:100%;height:100%}
+.ld{color:#fff;text-align:center;padding:60px 20px}
+.page{background:#fff;overflow:hidden}.page img{width:100%;height:100%;object-fit:contain;display:block;user-select:none}
+.scroller{height:100%;overflow:auto;text-align:center}.scroller img{max-width:100%;display:block;margin:0 auto 8px}
+.zoom{position:fixed;inset:0;z-index:60;background:#000;display:none;overflow:auto;padding:env(safe-area-inset-top,0px) 0 0}
+.zoom.on{display:block}.zoom img{display:block;margin:0 auto;height:auto;max-width:none;width:min(1700px,200vw)}
+.zoom button{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:10px;z-index:61;background:#fff;border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.about{max-width:720px;margin:20px auto 22px;text-align:left}
+.abc{display:flex;gap:22px;align-items:center;background:var(--card);border:1px solid rgba(122,102,80,.28);border-top:3px solid var(--wood);border-radius:12px;padding:18px 24px;box-shadow:0 8px 24px -14px rgba(0,0,0,.45)}
+.abc img{width:104px;height:104px;border-radius:50%;object-fit:cover;flex:0 0 auto;border:3px solid var(--card);box-shadow:0 0 0 2px var(--wood),0 6px 14px rgba(0,0,0,.25)}
+.abt{flex:1;min-width:0}
+.eyebrow{font:700 11px/1 Georgia,serif;letter-spacing:.2em;color:var(--wood);margin:0 0 7px;text-transform:uppercase}
+.abt .nm{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:24px;line-height:1.15;margin:0 0 4px}
+.abt .role{margin:0 0 12px;color:var(--muted);font-size:13px;letter-spacing:.04em}
+.abt ul{list-style:none;margin:0;padding:12px 0 0;border-top:1px solid rgba(122,102,80,.28);display:grid;grid-template-columns:auto 1fr;gap:6px 22px;font-size:14px}
+.abt li{display:flex;gap:8px;align-items:flex-start;min-width:0;line-height:1.4}
+.abt li svg{flex:0 0 auto;width:16px;height:16px;margin-top:2px;stroke:var(--wood);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.abt li.full{grid-column:1/-1}
+.abt a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted);overflow-wrap:anywhere}
+.abt a:hover{color:var(--wood)}
+@media (max-width:560px){.abc{flex-direction:column;text-align:center;padding:20px 16px}.abt ul{grid-template-columns:1fr;justify-items:center}.abt li{justify-content:center;text-align:left}.abt .nm{font-size:22px}}
+.abt .nm{font-size:22px;margin:0 0 10px}
+.abt .lb{color:var(--muted);font-family:Georgia,serif;font-weight:400;font-size:.8em;letter-spacing:.02em;margin-right:4px}
+.abt .nm .lb{font-size:.62em}
+.abt .ln{margin:0 0 6px;font-size:15px}
+.abt .ad{font-style:normal;font-size:15px;line-height:1.5;margin-top:10px;padding-top:10px;border-top:1px solid rgba(122,102,80,.28)}
+.abc img{width:124px;height:124px}
+/* ===== BOOK RACK ===== */
+#shelves{position:relative;margin:30px auto 0;max-width:560px;padding:14px 14px 0;border-radius:10px;
+ background:linear-gradient(180deg,#6b4423,#5e3a1e);
+ box-shadow:0 0 0 1px #3d2412,0 24px 40px -18px rgba(0,0,0,.6),inset 0 2px 0 rgba(255,255,255,.12)}
+#shelves::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-12px;height:14px;background:#4a2d17;border-radius:3px;box-shadow:0 10px 16px -6px rgba(0,0,0,.5)}
+.shelf{margin:0 0 0;padding:34px 22px 0;min-height:320px;gap:14px;justify-content:flex-start;border-radius:0;border-bottom:18px solid #9a6a3c;
+ background:repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 9px),linear-gradient(180deg,#2a1a0f 0%,#4a3020 100%);
+ box-shadow:inset 10px 0 14px -8px rgba(0,0,0,.65),inset -10px 0 14px -8px rgba(0,0,0,.65),inset 0 12px 16px -8px rgba(0,0,0,.7),0 6px 0 -2px #5e3a1e;
+ position:relative}
+.shelf+.shelf{margin-top:12px}
+.shelf::after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:4px;background:rgba(255,255,255,.22)}
+.book{box-shadow:inset 3px 0 5px rgba(255,255,255,.18),inset -3px 0 6px rgba(0,0,0,.3),4px 0 8px rgba(0,0,0,.45)!important}
+.hint{margin-top:42px}
+@media (max-width:480px){.shelf{padding:30px 12px 0;gap:10px}}
+.about{max-width:400px;margin:20px auto 24px}
+.abc{flex-direction:column;text-align:center;aspect-ratio:1/1;justify-content:center;gap:12px;padding:22px 24px}
+.abc img{width:96px;height:96px}
+.abt{width:100%;flex:none}
+.abt .eyebrow{margin-bottom:8px}
+.abt .nm{font-size:21px;margin:0 0 8px}
+.abt .ln{margin:0 0 4px;font-size:14px}
+.abt .ad{font-size:14px;line-height:1.45;margin-top:8px;padding-top:8px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="ol">ᱟᱞᱮ ᱪᱷᱟᱴᱠᱟ</div>
+  <h1>A Monthly Santali Literary Pdf eMagazine</h1>
+  <section class="about" aria-labelledby="abT">
+    <div class="abc">
+      <img src="assets/editor.webp" alt="Lakhan Murmu, Editor" width="104" height="104">
+      <div class="abt">
+        <p class="eyebrow" id="abT">About the Editor :</p>
+        <p class="nm"><span class="lb">Editor:</span> Lakhan Murmu (bls)</p>
+        <p class="ln"><span class="lb">Contact No:-</span> <a href="tel:6200451948">6200451948</a></p>
+        <p class="ln"><span class="lb">Email:-</span> <a href="mailto:murmulakhan12@gmail.com">murmulakhan12@gmail.com</a></p>
+        <address class="ad">Ghatsila<br>East Singhbhum<br>Jharkhand, 832303<br>India</address>
+      </div>
+    </div>
+  </section>
+  <div class="tools"><input type="search" id="q" placeholder="Search title or author…" aria-label="Search books"></div>
+</header>
+<main><div id="shelves"></div><p class="hint" id="hint"></p></main>
+<footer class="ol">ᱡᱚᱦᱟᱨ ᱜᱮ ᱥᱟᱱᱟᱢ ᱠᱚ</footer>
+
+<div class="reader" id="reader" role="dialog" aria-modal="true">
+  <div class="rbar"><div class="sw" id="rSw"></div><b id="rTitle"></b><button id="rClose">✕ Close</button></div>
+  <div class="stage" id="stage"></div>
+  <div class="cbar">
+    <button id="bPrev">◀</button>
+    <input type="range" id="rng" min="1" value="1" aria-label="Page slider">
+    <button id="bNext">▶</button>
+    <span>Page</span><input type="number" id="pg" min="1" value="1" aria-label="Go to page"><span id="tot"></span>
+    <button id="bGo">Go</button><button id="bZoom">🔍 Zoom</button><button id="bFs">⛶ Fullscreen</button>
+  </div>
+</div>
+<div class="zoom" id="zoom"><button id="zClose">✕ Close zoom</button><img id="zImg" alt="Zoomed page"></div>
+
+<script>
+/* Har book: n = pages, r = width/height ratio, ids = uploaded page-data files */
+const BOOKS = [{"title": "ᱟᱞᱮ ᱪᱷᱟᱴᱠᱟ - May 2026 (1st Issue)", "k": 1, "n": 21, "r": 0.7729}, {"title": "ᱟᱞᱮ ᱪᱷᱟᱴᱠᱟ - June 2026 (2nd Issue)", "k": 2, "n": 9, "r": 0.7729}];
+const PALETTE=["#7b2d26","#2f4858","#3d5a40","#8a5a1f","#4a3b6b","#a23e48","#1f5f6b","#5b4636"];
+const $=id=>document.getElementById(id);
+const hash=s=>[...s].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+function spec(b,i){const h=hash(b.title);return{color:b.color||PALETTE[(h+i)%PALETTE.length],height:200+(h%60),width:54+((h>>3)%22)}}
+function render(list){
+  const w=$("shelves");w.innerHTML="";
+  if(!list.length){w.innerHTML='<div class="empty">Koi book nahi mili.</div>';return}
+  const per=Math.max(3,Math.floor((w.clientWidth-28-44+14)/(66+14)));
+  for(let s=0;s<list.length;s+=per){
+    const sh=document.createElement("div");sh.className="shelf";
+    list.slice(s,s+per).forEach((b,i)=>{
+      const sp=spec(b,s+i),el=document.createElement("button");
+      el.className="book";el.style.background=sp.color;
+      el.title=b.title;el.setAttribute("aria-label",b.title);const m=b.title.match(/^(.*?)\s*-\s*(.*?)\s*\((.*)\)\s*$/);const w2=document.createElement("span");w2.className="sv";const a1=document.createElement("span");a1.className="t1";a1.textContent=m?m[1]:b.title;w2.appendChild(a1);if(m){w2.appendChild(document.createElement("br"));const a2=document.createElement("span");a2.className="t2";a2.textContent=m[2]+" \u00b7 "+m[3];w2.appendChild(a2)}el.appendChild(w2);const vv=(s+i)%2;el.style.height=(272-vv*16)+"px";el.style.width=(62+vv*4)+"px";
+      el.onclick=()=>openBook(b,sp);sh.appendChild(el)});
+    w.appendChild(sh)}
+  $("hint").textContent=list.length+" book"+(list.length>1?"s":"")+" on the shelf";
+}
+let pf=null,imgs=[],cur=0,token=0;
+async function openBook(b,sp){
+  const my=++token;
+  $("rTitle").textContent=b.title;$("rSw").style.background=sp.color;
+  $("reader").classList.add("on");document.body.style.overflow="hidden";
+  $("stage").innerHTML='<div class="ld">Book load ho rahi hai…</div>';
+  imgs=[];
+  try{
+    imgs=Array.from({length:b.n},(_,i)=>"pages/"+(b.dir||"b"+b.k)+"/"+String(i+1).padStart(3,"0")+".webp");if(my!==token)return;
+    start(b);
+  }catch(e){$("stage").innerHTML='<div class="ld">Book load nahi ho payi. Dobara try kijiye.</div>'}
+}
+function setPage(i){cur=i;$("pg").value=i+1;$("rng").value=i+1}
+function start(b){
+  const t=new Image();t.onerror=()=>{$("stage").innerHTML='<div class="ld">Pages load nahi hue: '+imgs[0]+'<br><br>Check kijiye ki <b>pages</b> folder (saari images ke saath) hosting par upload hua hai.</div>'};t.src=imgs[0];
+  const n=imgs.length;$("tot").textContent="/ "+n;$("pg").max=n;$("rng").max=n;setPage(0);
+  const st=$("stage");st.innerHTML='<div id="book"></div>';pf=null;
+  if(window.St&&St.PageFlip){
+    const H=700,W=Math.round(H*b.r);
+    pf=new St.PageFlip($("book"),{width:W,height:H,size:"stretch",minWidth:220,maxWidth:1100,minHeight:300,maxHeight:1500,showCover:true,maxShadowOpacity:.5,mobileScrollSupport:false,flippingTime:700});
+    imgs.forEach((u,i)=>{const d=document.createElement("div");d.className="page";if(i===0||i===imgs.length-1)d.setAttribute("data-density","hard");const im=new Image();im.src=u;im.decoding="async";im.draggable=false;d.appendChild(im);$("book").appendChild(d)});
+    pf.loadFromHTML($("book").querySelectorAll(".page"));
+    pf.on("flip",e=>setPage(e.data));
+  }else{
+    st.innerHTML='<div class="scroller"></div>';imgs.forEach(u=>{const im=new Image();im.src=u;im.loading="lazy";st.firstChild.appendChild(im)});
+  }
+}
+function go(i){i=Math.max(0,Math.min(imgs.length-1,i));if(pf){pf.turnToPage(i)}else{const k=$("stage").firstChild.children[i];if(k)k.scrollIntoView()}setPage(i)}
+function closeBook(){token++;$("reader").classList.remove("on");if(pf){try{pf.destroy()}catch(e){}pf=null}$("stage").innerHTML="";imgs.forEach(u=>URL.revokeObjectURL(u));imgs=[];document.body.style.overflow="";if(document.fullscreenElement)document.exitFullscreen()}
+$("rClose").onclick=closeBook;
+$("bPrev").onclick=()=>pf?pf.flipPrev():go(cur-1);
+$("bNext").onclick=()=>pf?pf.flipNext():go(cur+1);
+$("bGo").onclick=()=>go((parseInt($("pg").value)||1)-1);
+$("pg").addEventListener("keydown",e=>{if(e.key==="Enter")$("bGo").click()});
+$("rng").addEventListener("change",e=>go(parseInt(e.target.value)-1));
+$("bZoom").onclick=()=>{if(!imgs.length)return;$("zImg").src=imgs[cur];$("zoom").classList.add("on")};
+$("zClose").onclick=()=>$("zoom").classList.remove("on");
+$("bFs").onclick=()=>{try{document.fullscreenElement?document.exitFullscreen():$("reader").requestFullscreen()}catch(e){}};
+document.addEventListener("keydown",e=>{
+  if(!$("reader").classList.contains("on")||e.target.tagName==="INPUT")return;
+  if(e.key==="Escape"){$("zoom").classList.contains("on")?$("zClose").click():closeBook()}
+  if(e.key==="ArrowRight")$("bNext").click();if(e.key==="ArrowLeft")$("bPrev").click()});
+const flt=()=>BOOKS.filter(b=>b.title.toLowerCase().includes($("q").value.toLowerCase().trim()));
+$("q").addEventListener("input",()=>render(flt()));
+let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>render(flt()),200)});
+render(BOOKS);
+/* ===== GOOGLE SHEET CONTROL =====
+   Sheet ko File > Share > Publish to web > CSV karke jo link mile, yahan paste kijiye.
+   Khali chhodne par upar wali built-in list chalegi. */
+const SHEET_URL="";
+function parseCSV(t){const out=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];
+  if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c=='"')q=true;else if(c==",")(row.push(f),f="");
+  else if(c=="\n"||c=="\r"){if(c=="\r"&&t[i+1]=="\n")i++;row.push(f);out.push(row);row=[];f=""}else f+=c}
+  if(f||row.length){row.push(f);out.push(row)}return out}
+async function loadSheet(){
+  if(!SHEET_URL)return;
+  try{
+    const r=await fetch(SHEET_URL+(SHEET_URL.includes("?")?"&":"?")+"t="+Date.now());
+    const rows=parseCSV(await r.text()),h=rows.shift().map(x=>x.trim().toLowerCase());
+    const L=rows.map(r=>Object.fromEntries(h.map((k,i)=>[k,(r[i]||"").trim()])))
+      .filter(o=>o.title&&o.folder&&!/^(no|n|false|0|hide)$/i.test(o.show||"yes"))
+      .sort((a,b)=>(+a.order||999)-(+b.order||999))
+      .map(o=>({title:o.title,dir:o.folder,n:+o.pages,r:+o.ratio||0.7,color:o.color||undefined}));
+    if(L.length){BOOKS.length=0;BOOKS.push(...L);render(flt())}
+  }catch(e){console.warn("Sheet load failed, built-in list in use",e)}
+}
+loadSheet();
+</script>
+</body>
+</html>
